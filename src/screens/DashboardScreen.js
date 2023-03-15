@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer } from 'react';
-import Chart from 'react-google-charts';
+//import Chart from 'react-google-charts';
 import { Store } from '../Store';
 import { getError } from '../utils';
 import LoadingBox from '../components/LoadingBox';

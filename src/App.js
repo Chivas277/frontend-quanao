@@ -72,23 +72,23 @@ function App() {
               ? 'site-container active-cont d-flex flex-column full-box'
               : 'site-container active-cont d-flex flex-column'
             : fullBox
-            ? 'site-container d-flex flex-column full-box'
-            : 'site-container d-flex flex-column'
+              ? 'site-container d-flex flex-column full-box'
+              : 'site-container d-flex flex-column'
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
+          <Navbar bg="light" variant="light" expand="lg">
             <Container>
               <Button
-                variant="dark"
+                variant="light"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
                 <i className="fas fa-bars"></i>
               </Button>
 
               <LinkContainer to="/">
-                <Navbar.Brand>amazona</Navbar.Brand>
+                <Navbar.Brand>You's Store</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -116,12 +116,12 @@ function App() {
                         to="#signout"
                         onClick={signoutHandler}
                       >
-                       Đăng xuất
+                        Đăng xuất
                       </Link>
                     </NavDropdown>
                   ) : (
                     <Link className="nav-link" to="/signin">
-                     Đăng nhập
+                      Đăng nhập
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
