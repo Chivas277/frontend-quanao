@@ -92,6 +92,7 @@ export default function ProductEditScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
+      if(setCountInStock >0){
       dispatch({ type: 'UPDATE_REQUEST' });
       await publicRequest.put(
         `/api/products/${productId}`,
@@ -116,11 +117,20 @@ export default function ProductEditScreen() {
       });
       toast.success('Product updated successfully');
       navigate('/admin/products');
+    }else{
+      window.alert('Không thể để số lượng sản phẩm âm');
+      return;
+    }
     } catch (err) {
-      toast.error(getError(err));
+      // if (setCountInStock < 0) {
+        
+    
+      // } 
+      //toast.error(getError(err));
       dispatch({ type: 'UPDATE_FAIL' });
     }
   };
+  
   const uploadFileHandler = async (e, forImages) => {
     const file = e.target.files[0];
     const bodyFormData = new FormData();

@@ -188,7 +188,7 @@ export default function SearchScreen() {
               ))}
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3>Đánh giá của khách hàng</h3>
             <ul>
               {ratings.map((r) => (
@@ -210,7 +210,7 @@ export default function SearchScreen() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </Col>
         <Col md={9}>
           {loading ? (
@@ -274,7 +274,7 @@ export default function SearchScreen() {
                     className="mx-1"
                     to={{
                       pathname: '/search',
-                      seacrh: getFilterUrl({ page: x + 1 }, true),
+                      search: getFilterUrl({ page: x + 1 }, true),
                     }}
                   >
                     <Button

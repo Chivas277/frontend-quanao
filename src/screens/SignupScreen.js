@@ -28,7 +28,11 @@ export default function SignupScreen() {
       toast.error('Passwords do not match');
       return;
     }
+  
     try {
+      if(setPassword.length >=5){
+      
+      
       const { data } = await publicRequest.post('/api/users/signup', {
         name,
         email,
@@ -37,6 +41,11 @@ export default function SignupScreen() {
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');
+    }
+    else{
+      toast.error('Mật khẩu phải lớn hơn 5 ký tự');
+      return ;
+    }
     } catch (err) {
       toast.error(getError(err));
     }

@@ -165,6 +165,7 @@ function App() {
                   <Nav.Link>{category}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
+              
             ))}
           </Nav>
         </div>
